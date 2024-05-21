@@ -1,23 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-const initialItems = [
-  {
-    id: 1,
-    name: "good mood",
-    packed: true,
-  },
-  {
-    id: 2,
-    name: "passport",
-    packed: false,
-  },
-  {
-    id: 3,
-    name: "charger",
-    packed: false,
-  },
-];
+const initialItems = [];
 
 export const useStore = create(
   persist(

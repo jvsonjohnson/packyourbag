@@ -28,8 +28,7 @@ function ItemList({ items, deleteItem, toggleItem }) {
   );
 
   return (
-    <ul className="item-list">
-      {items.length === 0 && <EmptyView />}
+    <>
       {items.length > 0 && (
         <section className="sorting">
           <Select
@@ -39,17 +38,21 @@ function ItemList({ items, deleteItem, toggleItem }) {
           ></Select>
         </section>
       )}
-      {sortedItems.map((item, index) => {
-        return (
-          <Item
-            key={index}
-            item={item}
-            deleteItem={deleteItem}
-            toggleItem={toggleItem}
-          />
-        );
-      })}
-    </ul>
+      <ul className="item-list">
+        {items.length === 0 && <EmptyView />}
+
+        {sortedItems.map((item, index) => {
+          return (
+            <Item
+              key={index}
+              item={item}
+              deleteItem={deleteItem}
+              toggleItem={toggleItem}
+            />
+          );
+        })}
+      </ul>
+    </>
   );
 }
 
