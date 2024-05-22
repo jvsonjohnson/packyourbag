@@ -29,18 +29,17 @@ function ItemList({ items, deleteItem, toggleItem }) {
 
   return (
     <>
-      {items.length > 0 && (
-        <section className="sorting">
-          <Select
-            onChange={(option) => setSortBy(option.value)}
-            options={sortOptions}
-            defaultValue={sortOptions[0]}
-          ></Select>
-        </section>
-      )}
       <ul className="item-list">
         {items.length === 0 && <EmptyView />}
-
+        {items.length > 0 && (
+          <section className="sorting">
+            <Select
+              onChange={(option) => setSortBy(option.value)}
+              options={sortOptions}
+              defaultValue={sortOptions[0]}
+            ></Select>
+          </section>
+        )}
         {sortedItems.map((item, index) => {
           return (
             <Item

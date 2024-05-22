@@ -82,6 +82,7 @@ function App() {
           totalItems={totalItems}
           totalItemsPacked={totalItemsPacked}
         ></Header>
+
         <ItemList
           items={items}
           deleteItem={deleteItem}
